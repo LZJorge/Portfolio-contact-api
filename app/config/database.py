@@ -11,7 +11,6 @@ from sqlalchemy.orm import sessionmaker, declarative_base
 
 from app.config.settings import settings
 
-print(settings.database_url)
 engine = create_async_engine(settings.database_url)
 
 session_factory = async_scoped_session(

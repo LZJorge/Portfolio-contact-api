@@ -42,7 +42,7 @@ async def add(
     controller: Controller = Depends(get_controller),
     response: Response = Response(),
 ) -> ListMessagesResponse:
-    if x_key != settings.x_add_key:
+    if not x_key == settings.x_add_key:
         return ListMessagesResponse(
             success=False, status_code=401, content=[], msg="Invalid key"
         )
